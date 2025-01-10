@@ -1,10 +1,14 @@
+# Use an official Python runtime as a parent image
 FROM python:3.9-slim
 
+# Set the working directory in the container
 WORKDIR /app
 
-COPY . /app/
+# Copy the current directory contents into the container at /app
+COPY . /app
 
-RUN pip install requirements.txt
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Install Java (JDK 21) and other necessary libraries
 RUN apt-get update && apt-get install -y \
@@ -34,7 +38,4 @@ ENV PYSPARK_PYTHON=python3
 EXPOSE 8501
 
 # Run Streamlit
-CMD ["streamlit", "run", "app/app.py"]
-
-
-
+CMD ["streamlit", "run", "movie_recommendation_app.py"]
