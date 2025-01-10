@@ -19,21 +19,22 @@ if st.button("Get Recommendations"):
     st.write(f"Fetching movie recommendations for User ID: {user_id}...")
 
     recommendations = movie_reco(user_id, model)
-    """it checks whether model has returned any recommendations, if yes it will take first 10 """
+    #it checks whether model has returned any recommendations, if yes it will take first 10
     if recommendations.count() > 0:
         recommendations_list = recommendations.take(10)
 
-        """convert each row from Spark DataFrame into dictionary,"""
+        #convert each row from Spark DataFrame into dictionary
         recommendations_data = []
         for row in recommendations_list:
             recommendations_data.append(row.asDict())
 
-        """convert dict into pandas dataframe"""
+        #convert dict into pandas dataframe
         df_recommendations = pd.DataFrame(recommendations_data)
 
         # Display table in Streamlit
         st.dataframe(df_recommendations)
     else:
         st.write("No recommendations available for this user.")
-    """If there are no recommendation if the user has not rated any movies or the model could 
-    not generate recommendations, it displays the message."""
+        
+    #If there are no recommendation if the user has not rated any movies or the model could 
+    #not generate recommendations, it displays the message."""
