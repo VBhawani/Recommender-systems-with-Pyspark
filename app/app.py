@@ -36,4 +36,4 @@ if st.button("Get Recommendations"):
     else:
         st.write("No recommendations available for this user.")
     """If there are no recommendation if the user has not rated any movies or the model could 
-    not generate recommendations, it displays the message.""""
+    not generate recommendations, it displays the message."""
