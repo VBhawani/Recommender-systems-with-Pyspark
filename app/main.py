@@ -6,8 +6,8 @@ from pyspark.ml.recommendation import ALSModel
 
 spark = SparkSession.builder.appName("Movie Recommendation App").getOrCreate()
 sc = spark.sparkContext
-movies_df = spark.read.csv("../data/movies.csv",header = True)
-ratings_df = spark.read.csv("../data/ratings.csv",header= True)
+movies_df = spark.read.csv("./data/movies.csv",header = True)
+ratings_df = spark.read.csv("./data/ratings.csv",header= True)
 
 #convert string to integer and double
 ratings_df = ratings_df.select(ratings_df.userId.cast("integer"), ratings_df.movieId.cast("integer"), 
