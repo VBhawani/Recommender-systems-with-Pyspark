@@ -2,7 +2,7 @@
 
 ## 🏢 Description
 
-This project implements a simple Movie Recommendation System using PySpark in the backend with a pre-trained ALS (Alternating Least Squares) model to recommend movies based on user ratings, and a Streamlit frontend for interactive user input. The app is containerized using Docker, ensuring easy deployment across different environments. It has been deployed on Render, providing a seamless platform for hosting and running the application. Users can input their user ID to receive personalized movie recommendations directly through the web interface. 
+This project implements a simple Movie Recommendation System using PySpark in the backend with a pre-trained ALS (Alternating Least Squares) model to recommend movies based on user ratings (Collaborative Filtering) and  Streamlit frontend for interactive user input. The app is containerized using Docker, ensuring easy deployment across different environments. It has been deployed on Render, providing a seamless platform for hosting and running the application. Users can input their user ID to receive personalized movie recommendations directly through the web interface. 
 
 ![Flow Diagram](flow.png)
 

@@ -1,14 +1,14 @@
 # Apache Spark PySpark image with version 3.4.0
 FROM apache/spark-py:v3.4.0
 
-# Switches the user to root so you can install system packages.
+# Switches user to root 
 USER root
 RUN apt-get update && apt-get install -y sudo
 
-# Set working directory in the container
+# Set working directory in container
 WORKDIR /app
 
-# Copy your application files into the container
+# Copy your application files into container
 COPY . /app/
 
 # Install any additional Python dependencies with sudo
