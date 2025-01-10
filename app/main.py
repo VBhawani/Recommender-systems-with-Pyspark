@@ -56,5 +56,5 @@ def load_model(model_path):
 
 
 #create_model()
-# movie_reco(1,model)
+
 
